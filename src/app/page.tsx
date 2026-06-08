@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-[var(--border)]">
+      <nav className="sticky top-0 z-50 bg-[var(--bg-base)] border-b border-[var(--border)]">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="text-lg font-semibold">BIR 1901</span>
+            <span className="text-lg font-semibold text-[var(--text-primary)]">BIR 1901</span>
           </div>
           <div className="flex gap-6 items-center">
             <Link href="/login" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
@@ -22,7 +22,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="px-6 py-20 md:py-32 bg-white">
+      <section className="px-6 py-20 md:py-32 bg-[var(--bg-base)]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div className="space-y-6">
@@ -38,42 +38,48 @@ export default function Home() {
                 <Link href="/signup" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--accent-blue)] text-white font-medium rounded-md hover:opacity-90">
                   Get started <ArrowRight size={18} />
                 </Link>
-                <Link href="/login" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[var(--border)] rounded-md hover:bg-gray-50">
+                <Link href="/login" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[var(--border)] rounded-md text-[var(--text-primary)] hover:bg-[var(--bg-light)]">
                   Continue draft
                 </Link>
               </div>
             </div>
 
-            {/* Right side card */}
-            <div className="bg-gray-50 rounded-lg p-8 md:p-10 border border-[var(--border)]">
-              <div className="space-y-6">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-[var(--accent-blue)] rounded-md">
-                      <FileText className="text-white" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-[var(--text-primary)]">Form 1901</h3>
-                      <p className="text-sm text-[var(--text-secondary)]">Registration for self-employed</p>
-                    </div>
+            {/* Right side colored cards */}
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-lg p-6 border border-[var(--color-green)]/30">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-[var(--color-green)]/20 rounded-md">
+                    <Shield className="text-[var(--color-green)]" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">Secure</h3>
+                    <p className="text-sm text-[var(--text-secondary)]">Industry-standard encryption protects your data</p>
                   </div>
                 </div>
+              </div>
 
-                <ul className="space-y-4">
-                  {[
-                    { icon: Shield, title: 'Secure', desc: 'Industry-standard encryption' },
-                    { icon: CheckCircle, title: 'Fast', desc: 'Process completed in minutes' },
-                    { icon: ArrowRight, title: 'Simple', desc: 'Guided step-by-step flow' },
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3">
-                      <item.icon size={20} className="text-[var(--accent-blue)] flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-[var(--text-primary)]">{item.title}</p>
-                        <p className="text-sm text-[var(--text-secondary)]">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+              <div className="bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 rounded-lg p-6 border border-[var(--color-cyan)]/30">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-[var(--color-cyan)]/20 rounded-md">
+                    <CheckCircle className="text-[var(--color-cyan)]" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">Fast</h3>
+                    <p className="text-sm text-[var(--text-secondary)]">Complete registration in just minutes</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-lg p-6 border border-[var(--color-indigo)]/30">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-[var(--color-indigo)]/20 rounded-md">
+                    <FileText className="text-[var(--color-indigo)]" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">Form 1901</h3>
+                    <p className="text-sm text-[var(--text-secondary)]">Official BIR registration for self-employed</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -81,7 +87,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="px-6 py-20 md:py-28 bg-gray-50 border-t border-[var(--border)]">
+      <section className="px-6 py-20 md:py-28 bg-[var(--bg-light)] border-t border-[var(--border)]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-2">
@@ -96,7 +102,7 @@ export default function Home() {
               { title: 'Secure', desc: 'Your data is encrypted and protected' },
               { title: 'Real-time', desc: 'Track your application status instantly' },
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-lg border border-[var(--border)]">
+              <div key={i} className="bg-[var(--bg-card)] p-8 rounded-lg border border-[var(--border)]">
                 <p className="text-sm font-semibold text-[var(--text-secondary)] mb-3">0{i + 1}</p>
                 <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{item.title}</h3>
                 <p className="text-[var(--text-secondary)]">{item.desc}</p>
@@ -122,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 py-12 bg-white border-t border-[var(--border)]">
+      <footer className="px-6 py-12 bg-[var(--bg-base)] border-t border-[var(--border)]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
