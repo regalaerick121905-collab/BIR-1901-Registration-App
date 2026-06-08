@@ -1,23 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  --background: #f8f8fa;
+  --foreground: #0d0d0d;
+  --text-secondary: #3a3a3a;
+  --border-color: #ebebeb;
+  --gradient-start: #1a2fff;
+  --gradient-mid: #e8003d;
+  --gradient-end: #ffd000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-bir-blue: #0a2240;
-  --color-bir-yellow: #fdb913;
-  --color-bir-red: #cf142b;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-secondary: var(--text-secondary);
+  --color-border: var(--border-color);
+  --color-gradient-blue: var(--gradient-start);
+  --color-gradient-red: var(--gradient-mid);
+  --color-gradient-yellow: var(--gradient-end);
+  --font-display: "DM Serif Display", serif;
+  --font-sans: "DM Sans", "Figtree", ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050f1d;
-    --foreground: #f8fafc;
+    --background: #f8f8fa;
+    --foreground: #0d0d0d;
   }
 }
 
@@ -26,5 +34,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Utility classes for gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  border-image: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%) 1;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-all duration-200 ease-out;
 }
 
