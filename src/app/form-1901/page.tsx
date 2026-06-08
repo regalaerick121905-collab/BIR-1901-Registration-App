@@ -12,9 +12,9 @@ const COUNTRIES = [
 
 const InputField = ({ label, name, type = "text", placeholder = "", required = false, formData, updateForm, pattern, min, optionalLabel }: any) => (
   <div className="space-y-1">
-    <label className="text-[13px] font-semibold text-gray-700 flex justify-between">
+    <label className="text-[13px] font-semibold text-[var(--text-primary)] flex justify-between">
       <span>{label} {required && <span className="text-red-500">*</span>}</span>
-      {optionalLabel && <span className="text-gray-400 font-normal text-[11px]">(Optional)</span>}
+      {optionalLabel && <span className="text-[var(--text-secondary)] font-normal text-[11px]">(Optional)</span>}
     </label>
     <input 
       type={type} 
@@ -23,7 +23,7 @@ const InputField = ({ label, name, type = "text", placeholder = "", required = f
       onChange={updateForm} 
       pattern={pattern}
       min={min}
-      className="w-full border-gray-300 rounded-lg bg-gray-50 border px-3 py-2.5 text-sm focus:ring-2 focus:ring-[var(--color-bir-yellow)] focus:border-transparent outline-none transition-all" 
+      className="w-full border border-[var(--border)] rounded-lg bg-[var(--bg-light)] text-[var(--text-primary)] px-3 py-2.5 text-sm focus:ring-2 focus:ring-[var(--accent-blue)] focus:border-transparent outline-none transition-all placeholder-[var(--text-secondary)]" 
       placeholder={placeholder} 
       required={required} 
     />
@@ -76,12 +76,12 @@ const FORM_STEPS = [
 
 const ApplicationSummaryView = ({ formData }: { formData: any }) => (
   <div className="space-y-8">
-    <div className="flex items-center gap-2 text-xl font-bold text-gray-800 border-b pb-2">
-      <User size={24} className="text-blue-600"/> Applicant Personal Details
+    <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2">
+      <User size={24} className="text-[var(--accent-blue)]"/> Applicant Personal Details
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-      <div><span className="text-gray-500 block text-xs">Full Name</span><span className="font-medium">{formData.tpName || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">TIN</span><span className="font-medium">{formData.tin || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Full Name</span><span className="font-medium text-[var(--text-primary)]">{formData.tpName || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">TIN</span><span className="font-medium text-[var(--text-primary)]">{formData.tin || 'N/A'}</span></div>
       <div><span className="text-gray-500 block text-xs">PhilSys Card Number</span><span className="font-medium">{formData.philsysCardNum || 'N/A'}</span></div>
       <div><span className="text-gray-500 block text-xs">Taxpayer Type</span><span className="font-medium">{formData.tpType}</span></div>
       <div><span className="text-gray-500 block text-xs">Gender</span><span className="font-medium">{formData.gender}</span></div>
@@ -93,19 +93,19 @@ const ApplicationSummaryView = ({ formData }: { formData: any }) => (
       <div><span className="text-gray-500 block text-xs">Citizenship</span><span className="font-medium">{formData.citizenship === 'Other' ? formData.otherCitizenship : formData.citizenship}</span></div>
     </div>
 
-    <div className="flex items-center gap-2 text-xl font-bold text-gray-800 border-b pb-2 mt-8">
-      <MapPin size={24} className="text-red-600"/> Classification, Contact & ID
+    <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2 mt-8">
+      <MapPin size={24} className="text-red-500"/> Classification, Contact & ID
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Purpose of TIN Application</span><span className="font-medium">{formData.tinApplicationPurpose || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">8% Income Tax Rate Option</span><span className="font-medium">{formData.isUsing8percentFlatTax}</span></div>
-      <div><span className="text-gray-500 block text-xs">Classification (Gross Sales)</span><span className="font-medium">{formData.expectedAnnualGs}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Purpose of TIN Application</span><span className="font-medium text-[var(--text-primary)]">{formData.tinApplicationPurpose || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">8% Income Tax Rate Option</span><span className="font-medium text-[var(--text-primary)]">{formData.isUsing8percentFlatTax}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Classification (Gross Sales)</span><span className="font-medium text-[var(--text-primary)]">{formData.expectedAnnualGs}</span></div>
       
-      <div className="md:col-span-2 pt-2 border-t"><span className="text-gray-500 block text-xs">Local Residence Address</span><span className="font-medium">{formData.localResAdd || 'N/A'}</span></div>
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Business Address</span><span className="font-medium">{formData.businessAdd || 'N/A'}</span></div>
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Foreign Address</span><span className="font-medium">{formData.foreignAdd || 'N/A'}</span></div>
+      <div className="md:col-span-2 pt-2 border-t border-[var(--border)]"><span className="text-[var(--text-secondary)] block text-xs">Local Residence Address</span><span className="font-medium text-[var(--text-primary)]">{formData.localResAdd || 'N/A'}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Business Address</span><span className="font-medium text-[var(--text-primary)]">{formData.businessAdd || 'N/A'}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Foreign Address</span><span className="font-medium text-[var(--text-primary)]">{formData.foreignAdd || 'N/A'}</span></div>
       
-      <div className="md:col-span-2 pt-2 border-t"><span className="text-gray-500 block text-xs">Email Address</span><span className="font-medium break-all">{formData.emailAdd || 'N/A'}</span></div>
+      <div className="md:col-span-2 pt-2 border-t border-[var(--border)]"><span className="text-[var(--text-secondary)] block text-xs">Email Address</span><span className="font-medium break-all text-[var(--text-primary)]">{formData.emailAdd || 'N/A'}</span></div>
       <div><span className="text-gray-500 block text-xs">Contact Types</span><span className="font-medium">{formData.prefContactType || 'None'}</span></div>
       <div>
         <span className="text-gray-500 block text-xs">Contact Details</span>
@@ -316,46 +316,42 @@ export default function Form1901() {
     setStep(0);
   };
 
-  const selectStyles = "w-full border px-3 py-2.5 text-sm rounded-lg bg-gray-50 outline-none focus:ring-2 focus:ring-[var(--color-bir-yellow)]";
-  const labelStyles = "text-[13px] font-semibold text-gray-700";
+  const selectStyles = "w-full border border-[var(--border)] px-3 py-2.5 text-sm rounded-lg bg-[var(--bg-light)] text-[var(--text-primary)] outline-none focus:ring-2 focus:ring-[var(--accent-blue)]";
+  const labelStyles = "text-[13px] font-semibold text-[var(--text-primary)]";
 
   // Calculate minimum expiry date (either effectivity date or today)
   const minExpiryDate = formData.effectivityDate || new Date().toISOString().split("T")[0];
 
   if (step === 0) {
     return (
-      <div className="min-h-screen bg-[#0a192f] flex flex-col font-sans relative overflow-hidden">
-        {/* Subtle background glow effect */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
+      <div className="min-h-screen bg-[var(--bg-base)] flex flex-col font-sans relative overflow-hidden">
         <div className="container mx-auto max-w-md p-6 sm:p-8 flex-1 flex flex-col justify-between relative z-10">
           <div className="flex items-center gap-3 mt-4">
-            <div className="bg-[#ffc107] rounded-full p-1 w-10 h-10 flex items-center justify-center overflow-hidden">
+            <div className="bg-[var(--accent-blue)] rounded-lg p-1 w-10 h-10 flex items-center justify-center overflow-hidden">
               <img src="/bir-logo.png" alt="BIR Logo" className="w-full h-full object-contain" />
             </div>
-            <span className="text-white font-bold text-lg tracking-tight">Bureau of Internal Revenue</span>
+            <span className="text-[var(--text-primary)] font-bold text-lg tracking-tight">Bureau of Internal Revenue</span>
           </div>
 
           <div className="my-auto py-12">
-            <div className="inline-flex items-center gap-2 border border-white/20 bg-white/5 rounded-full px-4 py-1.5 mb-8 text-sm text-gray-300">
-              <div className="w-2 h-2 rounded-full bg-[#ffc107]"></div>
+            <div className="inline-flex items-center gap-2 border border-[var(--border)] bg-[var(--bg-light)]/50 rounded-lg px-4 py-1.5 mb-8 text-sm text-[var(--text-secondary)]">
+              <div className="w-2 h-2 rounded-full bg-[var(--accent-blue)]"></div>
               Modernized Digital Form
             </div>
             
-            <h1 className="text-[3.5rem] font-extrabold text-white leading-[1.05] mb-6 tracking-tight">
+            <h1 className="text-[3.5rem] font-extrabold text-[var(--text-primary)] leading-[1.05] mb-6 tracking-tight">
               Register your<br/>
-              <span className="text-[#ffc107]">Business</span><br/>
+              <span className="text-[var(--accent-blue)]">Business</span><br/>
               with ease.
             </h1>
 
-            <p className="text-lg text-gray-400 mb-12 leading-relaxed">
+            <p className="text-lg text-[var(--text-secondary)] mb-12 leading-relaxed">
               Experience the new, streamlined BIR Form 1901. Apply for registration of self-employed and mixed income individuals, estates, and trusts digitally.
             </p>
 
             <button 
               onClick={() => setStep(1)} 
-              className="w-full bg-[#ffc107] text-[#0a192f] font-bold text-lg py-4 rounded-full flex justify-center items-center gap-2 hover:bg-yellow-400 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-yellow-500/20"
+              className="w-full bg-[var(--accent-blue)] text-white font-bold text-lg py-4 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
             >
               Start Application <ArrowRight size={20} strokeWidth={2.5} />
             </button>
@@ -366,27 +362,27 @@ export default function Form1901() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-      <header className="bg-[#1e3a8a] text-white p-3 sm:p-4 shadow-md sticky top-0 z-50">
+    <div className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] font-sans">
+      <header className="bg-[var(--bg-card)] text-[var(--text-primary)] p-3 sm:p-4 shadow-md sticky top-0 z-50 border-b border-[var(--border)]">
         <div className="container mx-auto max-w-5xl flex items-center gap-3">
           {step < 8 && (
-            <Link href="/" className="hover:text-gray-300 transition-colors">
+            <Link href="/" className="hover:text-[var(--text-secondary)] transition-colors">
               <ArrowLeft size={20} />
             </Link>
           )}
           <div className="flex items-center gap-3">
-            <div className="bg-white rounded-full p-1 w-9 h-9 flex items-center justify-center overflow-hidden">
+            <div className="bg-[var(--accent-blue)] rounded-lg p-1 w-9 h-9 flex items-center justify-center overflow-hidden">
               <img src="/bir-logo.png" alt="BIR Logo" className="w-full h-full object-contain" />
             </div>
             <h1 className="font-semibold text-base hidden sm:block">Form 1901 Registration</h1>
           </div>
           
           {step >= 8 ? (
-            <button onClick={handleLogout} className="ml-auto text-xs bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-full font-semibold transition-colors">
+            <button onClick={handleLogout} className="ml-auto text-xs bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-lg font-semibold transition-colors">
               Logout
             </button>
           ) : (
-            <div className="ml-auto text-xs bg-white/10 px-3 py-1 rounded-full border border-white/20">
+            <div className="ml-auto text-xs bg-[var(--bg-light)] px-3 py-1 rounded-lg border border-[var(--border)]">
               {`Step ${step} of 7`}
             </div>
           )}
@@ -394,20 +390,20 @@ export default function Form1901() {
       </header>
 
       <main className="container mx-auto max-w-4xl px-4 py-6 sm:py-8">
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div className="bg-[var(--bg-card)] rounded-2xl shadow-xl border border-[var(--border)] overflow-hidden">
           {step < 8 && (
-            <div className="px-4 py-6 sm:px-6 sm:py-8 border-b border-gray-100 bg-gray-50/50">
+            <div className="px-4 py-6 sm:px-6 sm:py-8 border-b border-[var(--border)] bg-[var(--bg-light)]/50">
               <div className="flex justify-between items-center mb-6 sm:mb-8">
-                <span className="font-bold text-gray-800 text-sm sm:text-lg">Step {step} of 7</span>
-                <span className="text-gray-500 text-xs sm:text-sm font-medium">{Math.round(((step - 1) / 7) * 100)}% complete</span>
+                <span className="font-bold text-[var(--text-primary)] text-sm sm:text-lg">Step {step} of 7</span>
+                <span className="text-[var(--text-secondary)] text-xs sm:text-sm font-medium">{Math.round(((step - 1) / 7) * 100)}% complete</span>
               </div>
               
               <div className="relative flex justify-between items-center w-full max-w-3xl mx-auto px-1 sm:px-4">
                 {/* Background Line */}
-                <div className="absolute left-1 right-1 sm:left-4 sm:right-4 top-1/2 -translate-y-1/2 h-1 bg-gray-200 rounded"></div>
+                <div className="absolute left-1 right-1 sm:left-4 sm:right-4 top-1/2 -translate-y-1/2 h-1 bg-[var(--border)] rounded"></div>
                 {/* Active Line Progress */}
-                <div className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 h-1 bg-[#1e3a8a] rounded transition-all duration-500 sm:block hidden" style={{ width: `calc(${((step - 1) / 6) * 100}% - 2rem)` }}></div>
-                <div className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 h-1 bg-[#1e3a8a] rounded transition-all duration-500 sm:hidden" style={{ width: `calc(${((step - 1) / 6) * 100}% - 0.5rem)` }}></div>
+                <div className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 h-1 bg-[var(--accent-blue)] rounded transition-all duration-500 sm:block hidden" style={{ width: `calc(${((step - 1) / 6) * 100}% - 2rem)` }}></div>
+                <div className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 h-1 bg-[var(--accent-blue)] rounded transition-all duration-500 sm:hidden" style={{ width: `calc(${((step - 1) / 6) * 100}% - 0.5rem)` }}></div>
                 
                 {FORM_STEPS.map((s) => {
                   const isActive = step === s.id;
@@ -416,15 +412,15 @@ export default function Form1901() {
                   return (
                     <div key={s.id} className="relative flex flex-col items-center group z-10">
                       <div className={`w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold transition-all duration-300 ${
-                        isActive ? 'bg-[#1e3a8a] text-white ring-[3px] sm:ring-[4px] ring-[#1e3a8a]/20 border-2 border-transparent' :
-                        isCompleted ? 'bg-white border-2 border-[#1e3a8a] text-[#1e3a8a]' :
-                        'bg-white border-2 border-gray-300 text-gray-400'
+                        isActive ? 'bg-[var(--accent-blue)] text-white ring-[3px] sm:ring-[4px] ring-[var(--accent-blue)]/20 border-2 border-transparent' :
+                        isCompleted ? 'bg-[var(--bg-card)] border-2 border-[var(--accent-blue)] text-[var(--accent-blue)]' :
+                        'bg-[var(--bg-card)] border-2 border-[var(--border)] text-[var(--text-secondary)]'
                       }`}>
                         {s.id}
                       </div>
                       <span className={`absolute -bottom-5 sm:-bottom-6 text-[10px] sm:text-[11px] font-semibold whitespace-nowrap ${
-                        isActive ? 'block text-[#1e3a8a]' : 
-                        isCompleted ? 'hidden sm:block text-gray-700' : 'hidden sm:block text-gray-400'
+                        isActive ? 'block text-[var(--accent-blue)]' : 
+                        isCompleted ? 'hidden sm:block text-[var(--text-primary)]' : 'hidden sm:block text-[var(--text-secondary)]'
                       }`}>
                         {s.label}
                       </span>
@@ -439,37 +435,37 @@ export default function Form1901() {
             <div className="p-0">
               {showSummary ? (
                 <>
-                  <div className="bg-[#1e3a8a] p-8 text-center border-b border-blue-900">
+                  <div className="bg-[var(--accent-blue)] p-8 text-center border-b border-[var(--border)]">
                     <h2 className="text-2xl font-bold text-white">Application Summary</h2>
-                    <p className="text-sm text-blue-200 mt-2">Here is the complete record of your submission.</p>
+                    <p className="text-sm text-blue-100 mt-2">Here is the complete record of your submission.</p>
                   </div>
               
-              <div className="p-6 sm:p-10 space-y-8 bg-white">
+              <div className="p-6 sm:p-10 space-y-8 bg-[var(--bg-card)]">
                 <ApplicationSummaryView formData={formData} />
               </div>
                 
-              <div className="p-6 border-t bg-gray-50 flex justify-center">
-                <button onClick={() => setShowSummary(false)} className="bg-[#1e3a8a] text-white px-8 py-2.5 rounded-lg hover:bg-blue-800 transition-colors font-semibold flex items-center gap-2">
+              <div className="p-6 border-t border-[var(--border)] bg-[var(--bg-light)] flex justify-center">
+                <button onClick={() => setShowSummary(false)} className="bg-[var(--accent-blue)] text-white px-8 py-2.5 rounded-lg hover:opacity-90 transition-colors font-semibold flex items-center gap-2">
                   <ArrowLeft size={18} /> Back to Dashboard
                 </button>
               </div>
             </>
               ) : (
-                <div className="p-8 sm:p-16 text-center bg-gray-50 min-h-[450px]">
-                  <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-200">
+                <div className="p-8 sm:p-16 text-center bg-[var(--bg-light)] min-h-[450px]">
+                  <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/20">
                     <CheckCircle2 size={32} />
                   </div>
-                  <h2 className="text-3xl font-bold text-[#1e3a8a]">Welcome, {formData.tpName || 'Taxpayer'}!</h2>
-                  <p className="text-gray-600 mt-2 max-w-md mx-auto">Your application has been successfully processed and recorded in the system.</p>
+                  <h2 className="text-3xl font-bold text-[var(--accent-blue)]">Welcome, {formData.tpName || 'Taxpayer'}!</h2>
+                  <p className="text-[var(--text-secondary)] mt-2 max-w-md mx-auto">Your application has been successfully processed and recorded in the system.</p>
                   
                   <div className="mt-12 grid grid-cols-1 max-w-xs mx-auto">
-                    <button onClick={() => setShowSummary(true)} className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md hover:border-blue-400 transition-all group flex flex-col items-center gap-4 cursor-pointer text-left">
-                        <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
+                    <button onClick={() => setShowSummary(true)} className="bg-[var(--bg-card)] border border-[var(--border)] p-6 rounded-xl shadow-sm hover:shadow-md hover:border-[var(--accent-blue)] transition-all group flex flex-col items-center gap-4 cursor-pointer text-left">
+                        <div className="w-16 h-16 bg-[var(--accent-blue)]/10 rounded-full flex items-center justify-center text-[var(--accent-blue)] group-hover:scale-110 transition-transform">
                             <FileText size={32} />
                         </div>
                         <div className="text-center">
-                            <h3 className="font-bold text-gray-800 text-lg">Application Summary</h3>
-                            <p className="text-xs text-gray-500 mt-1">Review the details of your submitted form</p>
+                            <h3 className="font-bold text-[var(--text-primary)] text-lg">Application Summary</h3>
+                            <p className="text-xs text-[var(--text-secondary)] mt-1">Review the details of your submitted form</p>
                         </div>
                     </button>
                   </div>
@@ -482,7 +478,7 @@ export default function Form1901() {
               {/* STEP 1 */}
               {step === 1 && (
                 <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
-                  <h2 className="text-xl font-bold text-[#1e3a8a] border-b pb-3">Step 1: Applicant Personal Details</h2>
+                  <h2 className="text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-3">Step 1: Applicant Personal Details</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <InputField label="Taxpayer Identification Number (TIN)" name="tin" placeholder="000-000-000-000" formData={formData} updateForm={updateForm} optionalLabel />
                     <InputField label="PhilSys Card Number" name="philsysCardNum" placeholder="0000-0000-0000-0000" formData={formData} updateForm={updateForm} optionalLabel />
@@ -574,13 +570,13 @@ export default function Form1901() {
                       </select>
                     </div>
 
-                    <div className="space-y-1 md:col-span-2 pt-2 border-t mt-2">
+                    <div className="space-y-1 md:col-span-2 pt-2 border-t border-[var(--border)] mt-2">
                       <label className={labelStyles}>Preferred Contact Type <span className="text-red-500">*</span></label>
                       <div className="flex flex-wrap gap-4 mt-1.5 text-sm">
                         {['Landline Number', 'Fax Number', 'Mobile Number'].map((type) => (
                           <label key={type} className="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" name="prefContactType" value={type} checked={formData.prefContactType.includes(type)} onChange={handleCheckboxChange} className="accent-[#1e3a8a] w-4 h-4" />
-                            <span>{type}</span>
+                            <input type="checkbox" name="prefContactType" value={type} checked={formData.prefContactType.includes(type)} onChange={handleCheckboxChange} className="accent-[var(--accent-blue)] w-4 h-4" />
+                            <span className="text-[var(--text-primary)]">{type}</span>
                           </label>
                         ))}
                       </div>
@@ -863,19 +859,19 @@ export default function Form1901() {
               {/* STEP 7 */}
               {step === 7 && (
                 <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
-                  <h2 className="text-xl font-bold text-[#1e3a8a] border-b pb-3">Step 7: Final Review & Submit</h2>
+                  <h2 className="text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-3">Step 7: Final Review & Submit</h2>
                   
-                  <div className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden p-6 max-h-[50vh] overflow-y-auto shadow-inner">
+                  <div className="bg-[var(--bg-light)] rounded-xl border border-[var(--border)] overflow-hidden p-6 max-h-[50vh] overflow-y-auto shadow-inner">
                     <ApplicationSummaryView formData={formData} />
                   </div>
                   
-                  <div className="bg-blue-50 border border-blue-100 rounded-lg p-5 flex gap-3 text-xs text-[#1e3a8a]">
-                    <div className="mt-0.5"><CheckCircle2 size={16} /></div>
+                  <div className="bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-5 flex gap-3 text-xs text-[var(--text-primary)]">
+                    <div className="mt-0.5"><CheckCircle2 size={16} className="text-[var(--accent-blue)]" /></div>
                     <p className="leading-relaxed"><strong>Declaration:</strong> I declare, under the penalties of perjury, that this application has been made in good faith, verified by me and to the best of my knowledge and belief, is true and correct, pursuant to the provisions of the National Internal Revenue Code, as amended, and the regulations issued under the authority thereof. Further, I give my consent to the processing of my information as contemplated under the Data Privacy Act of 2012 for legitimate and lawful purposes.</p>
                   </div>
                   
                   {errorMessage && (
-                    <div className="p-4 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm font-semibold flex items-start gap-3">
+                    <div className="p-4 bg-red-500/10 border border-red-500/30 text-red-400 rounded-lg text-sm font-semibold flex items-start gap-3">
                       <div className="mt-0.5">⚠️</div>
                       <p>{errorMessage}</p>
                     </div>
@@ -884,11 +880,11 @@ export default function Form1901() {
               )}
 
               {/* Navigation */}
-              <div className="mt-8 pt-5 border-t flex justify-between items-center">
-                <button type="button" onClick={prevStep} disabled={step === 1} className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${step === 1 ? 'opacity-0 pointer-events-none' : 'text-gray-600 hover:bg-gray-100'}`}>
+              <div className="mt-8 pt-5 border-t border-[var(--border)] flex justify-between items-center">
+                <button type="button" onClick={prevStep} disabled={step === 1} className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${step === 1 ? 'opacity-0 pointer-events-none' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-light)]'}`}>
                   <ArrowLeft size={16} /> Back
                 </button>
-                <button type="submit" className="flex items-center gap-2 bg-[var(--color-bir-yellow)] text-[#1e3a8a] px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-yellow-400 hover:shadow-lg transition-all">
+                <button type="submit" className="flex items-center gap-2 bg-[var(--accent-blue)] text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:opacity-90 hover:shadow-lg transition-all">
                   {step === 7 ? 'Submit Application' : 'Continue'} {step < 7 && <ArrowRight size={16} />}
                 </button>
               </div>

@@ -14,31 +14,31 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-bir-blue)] text-white flex flex-col justify-center items-center relative p-6">
-      <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+    <div className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] flex flex-col justify-center items-center relative p-6">
+      <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
         <ArrowLeft size={20} />
         Back to Home
       </Link>
       
-      <div className="w-full max-w-md bg-white/5 border border-white/10 backdrop-blur-xl p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden my-8">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-bir-red)] via-[var(--color-bir-yellow)] to-[var(--color-bir-blue)]"></div>
+      <div className="w-full max-w-md bg-[var(--bg-card)] border border-[var(--border)] p-8 sm:p-10 rounded-2xl shadow-lg relative overflow-hidden my-8">
+        <div className="absolute top-0 left-0 w-full h-1 bg-[var(--accent-blue)]"></div>
         
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2">Create Account</h2>
-          <p className="text-gray-400">Start your digital Form 1901 registration</p>
+          <h2 className="text-3xl font-bold mb-2 text-[var(--text-primary)]">Create Account</h2>
+          <p className="text-[var(--text-secondary)]">Start your digital Form 1901 registration</p>
         </div>
         
         <form onSubmit={handleSignup} className="space-y-5">
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-300" htmlFor="name">Full Name</label>
+            <label className="text-sm font-medium text-[var(--text-secondary)]" htmlFor="name">Full Name</label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[var(--text-secondary)]">
                 <User size={20} />
               </div>
               <input 
                 id="name"
                 type="text" 
-                className="w-full bg-black/20 border border-white/10 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[var(--color-bir-yellow)] focus:border-transparent transition-all"
+                className="w-full bg-[var(--bg-light)] border border-[var(--border)] rounded-lg py-3 pl-10 pr-4 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)] focus:border-transparent transition-all placeholder-[var(--text-secondary)]"
                 placeholder="Juan Dela Cruz"
                 required
               />
@@ -46,15 +46,15 @@ export default function SignupPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-300" htmlFor="email">Email Address</label>
+            <label className="text-sm font-medium text-[var(--text-secondary)]" htmlFor="email">Email Address</label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[var(--text-secondary)]">
                 <Mail size={20} />
               </div>
               <input 
                 id="email"
                 type="email" 
-                className="w-full bg-black/20 border border-white/10 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[var(--color-bir-yellow)] focus:border-transparent transition-all"
+                className="w-full bg-[var(--bg-light)] border border-[var(--border)] rounded-lg py-3 pl-10 pr-4 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)] focus:border-transparent transition-all placeholder-[var(--text-secondary)]"
                 placeholder="name@example.com"
                 required
               />
@@ -62,15 +62,15 @@ export default function SignupPage() {
           </div>
           
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-300" htmlFor="password">Password</label>
+            <label className="text-sm font-medium text-[var(--text-secondary)]" htmlFor="password">Password</label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[var(--text-secondary)]">
                 <Lock size={20} />
               </div>
               <input 
                 id="password"
                 type="password" 
-                className="w-full bg-black/20 border border-white/10 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[var(--color-bir-yellow)] focus:border-transparent transition-all"
+                className="w-full bg-[var(--bg-light)] border border-[var(--border)] rounded-lg py-3 pl-10 pr-4 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)] focus:border-transparent transition-all placeholder-[var(--text-secondary)]"
                 placeholder="••••••••"
                 required
               />
@@ -78,15 +78,15 @@ export default function SignupPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-300" htmlFor="confirm_password">Confirm Password</label>
+            <label className="text-sm font-medium text-[var(--text-secondary)]" htmlFor="confirm_password">Confirm Password</label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[var(--text-secondary)]">
                 <Lock size={20} />
               </div>
               <input 
                 id="confirm_password"
                 type="password" 
-                className="w-full bg-black/20 border border-white/10 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[var(--color-bir-yellow)] focus:border-transparent transition-all"
+                className="w-full bg-[var(--bg-light)] border border-[var(--border)] rounded-lg py-3 pl-10 pr-4 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-blue)] focus:border-transparent transition-all placeholder-[var(--text-secondary)]"
                 placeholder="••••••••"
                 required
               />
@@ -95,15 +95,15 @@ export default function SignupPage() {
           
           <button 
             type="submit" 
-            className="w-full bg-[var(--color-bir-yellow)] text-[var(--color-bir-blue)] font-bold py-3.5 rounded-xl hover:bg-yellow-400 transition-colors shadow-lg mt-2"
+            className="w-full bg-[var(--accent-blue)] text-white font-bold py-3.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg mt-2"
           >
             Create Account
           </button>
         </form>
         
-        <div className="mt-8 text-center text-sm text-gray-400">
+        <div className="mt-8 text-center text-sm text-[var(--text-secondary)]">
           Already have an account?{' '}
-          <Link href="/login" className="text-[var(--color-bir-yellow)] font-semibold hover:underline">
+          <Link href="/login" className="text-[var(--accent-blue)] font-semibold hover:underline">
             Log in instead
           </Link>
         </div>
