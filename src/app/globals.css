@@ -1,28 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg-base: #090d1a;
-  --bg-card: #0f1628;
-  --bg-elevated: #151c35;
-  --text-primary: #ffffff;
-  --text-secondary: #a8b2d0;
-  --gradient-blue: #1a2fff;
-  --gradient-red: #e8003d;
-  --gradient-yellow: #ffd000;
-  --border-light: rgba(255, 255, 255, 0.07);
+  --bg-base: #0a0e1a;
+  --bg-card: #ffffff;
+  --text-primary: #0a0e1a;
+  --text-secondary: #6b7280;
+  --accent-blue: #2563eb;
+  --border: #e5e7eb;
 }
 
 @theme inline {
-  --color-bg-base: var(--bg-base);
-  --color-bg-card: var(--bg-card);
-  --color-bg-elevated: var(--bg-elevated);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-gradient-blue: var(--gradient-blue);
-  --color-gradient-red: var(--gradient-red);
-  --color-gradient-yellow: var(--gradient-yellow);
-  --font-display: "Syne", "Clash Display", system-ui, sans-serif;
-  --font-sans: "Inter", "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 body {
@@ -38,38 +27,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Gradient utilities */
-.gradient-primary {
-  background: linear-gradient(135deg, var(--gradient-blue) 0%, var(--gradient-red) 50%, var(--gradient-yellow) 100%);
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--gradient-blue) 0%, var(--gradient-red) 50%, var(--gradient-yellow) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.gradient-line {
-  height: 2px;
-  background: linear-gradient(90deg, var(--gradient-blue) 0%, var(--gradient-red) 50%, var(--gradient-yellow) 100%);
-}
-
-.glow-sm {
-  box-shadow: 0 0 24px rgba(26, 47, 255, 0.12);
-}
-
-.glow-md {
-  box-shadow: 0 0 40px rgba(26, 47, 255, 0.15);
-}
-
-.glow-hover:hover {
-  box-shadow: 0 0 60px rgba(26, 47, 255, 0.25);
-}
-
 /* Smooth transitions */
 * {
-  @apply transition-all duration-250 ease-out;
+  @apply transition-all duration-150 ease-out;
 }
 
