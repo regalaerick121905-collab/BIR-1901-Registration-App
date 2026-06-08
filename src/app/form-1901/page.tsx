@@ -82,15 +82,15 @@ const ApplicationSummaryView = ({ formData }: { formData: any }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
       <div><span className="text-[var(--text-secondary)] block text-xs">Full Name</span><span className="font-medium text-[var(--text-primary)]">{formData.tpName || 'N/A'}</span></div>
       <div><span className="text-[var(--text-secondary)] block text-xs">TIN</span><span className="font-medium text-[var(--text-primary)]">{formData.tin || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">PhilSys Card Number</span><span className="font-medium">{formData.philsysCardNum || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Taxpayer Type</span><span className="font-medium">{formData.tpType}</span></div>
-      <div><span className="text-gray-500 block text-xs">Gender</span><span className="font-medium">{formData.gender}</span></div>
-      <div><span className="text-gray-500 block text-xs">Civil Status</span><span className="font-medium">{formData.civilStatus}</span></div>
-      <div><span className="text-gray-500 block text-xs">Date of Birth</span><span className="font-medium">{formData.birthDate || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Place of Birth</span><span className="font-medium">{formData.birthPlace || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Mother's Maiden Name</span><span className="font-medium">{formData.motherMaidenName || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Father's Name</span><span className="font-medium">{formData.fatherName || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Citizenship</span><span className="font-medium">{formData.citizenship === 'Other' ? formData.otherCitizenship : formData.citizenship}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">PhilSys Card Number</span><span className="font-medium text-[var(--text-primary)]">{formData.philsysCardNum || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Taxpayer Type</span><span className="font-medium text-[var(--text-primary)]">{formData.tpType}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Gender</span><span className="font-medium text-[var(--text-primary)]">{formData.gender}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Civil Status</span><span className="font-medium text-[var(--text-primary)]">{formData.civilStatus}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Date of Birth</span><span className="font-medium text-[var(--text-primary)]">{formData.birthDate || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Place of Birth</span><span className="font-medium text-[var(--text-primary)]">{formData.birthPlace || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Mother's Maiden Name</span><span className="font-medium text-[var(--text-primary)]">{formData.motherMaidenName || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Father's Name</span><span className="font-medium text-[var(--text-primary)]">{formData.fatherName || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Citizenship</span><span className="font-medium text-[var(--text-primary)]">{formData.citizenship === 'Other' ? formData.otherCitizenship : formData.citizenship}</span></div>
     </div>
 
     <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2 mt-8">
@@ -106,108 +106,108 @@ const ApplicationSummaryView = ({ formData }: { formData: any }) => (
       <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Foreign Address</span><span className="font-medium text-[var(--text-primary)]">{formData.foreignAdd || 'N/A'}</span></div>
       
       <div className="md:col-span-2 pt-2 border-t border-[var(--border)]"><span className="text-[var(--text-secondary)] block text-xs">Email Address</span><span className="font-medium break-all text-[var(--text-primary)]">{formData.emailAdd || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Contact Types</span><span className="font-medium">{formData.prefContactType || 'None'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Contact Types</span><span className="font-medium text-[var(--text-primary)]">{formData.prefContactType || 'None'}</span></div>
       <div>
-        <span className="text-gray-500 block text-xs">Contact Details</span>
-        <span className="font-medium block">{formData.landlineDetails ? `Landline: ${formData.landlineDetails}` : ''}</span>
-        <span className="font-medium block">{formData.faxDetails ? `Fax: ${formData.faxDetails}` : ''}</span>
-        <span className="font-medium block">{formData.mobileDetails ? `Mobile: ${formData.mobileDetails}` : ''}</span>
+        <span className="text-[var(--text-secondary)] block text-xs">Contact Details</span>
+        <span className="font-medium block text-[var(--text-primary)]">{formData.landlineDetails ? `Landline: ${formData.landlineDetails}` : ''}</span>
+        <span className="font-medium block text-[var(--text-primary)]">{formData.faxDetails ? `Fax: ${formData.faxDetails}` : ''}</span>
+        <span className="font-medium block text-[var(--text-primary)]">{formData.mobileDetails ? `Mobile: ${formData.mobileDetails}` : ''}</span>
       </div>
 
-      <div className="md:col-span-2 pt-2 border-t"><span className="text-gray-500 block text-xs text-red-600 font-semibold mb-1">ID Validation Details</span></div>
-      <div><span className="text-gray-500 block text-xs">ID Type</span><span className="font-medium">{formData.idType}</span></div>
-      <div><span className="text-gray-500 block text-xs">ID Number</span><span className="font-medium">{formData.idNumber || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Effectivity Date</span><span className="font-medium">{formData.effectivityDate || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Expiry Date</span><span className="font-medium">{formData.expiryDate || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Issuer</span><span className="font-medium">{formData.issuer || 'N/A'}</span></div>
-      <div><span className="text-gray-500 block text-xs">Country of Issue</span><span className="font-medium">{formData.placeOfIssue}</span></div>
+      <div className="md:col-span-2 pt-2 border-t border-[var(--border)]"><span className="text-red-400 block text-xs font-semibold mb-1">ID Validation Details</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">ID Type</span><span className="font-medium text-[var(--text-primary)]">{formData.idType}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">ID Number</span><span className="font-medium text-[var(--text-primary)]">{formData.idNumber || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Effectivity Date</span><span className="font-medium text-[var(--text-primary)]">{formData.effectivityDate || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Expiry Date</span><span className="font-medium text-[var(--text-primary)]">{formData.expiryDate || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Issuer</span><span className="font-medium text-[var(--text-primary)]">{formData.issuer || 'N/A'}</span></div>
+      <div><span className="text-[var(--text-secondary)] block text-xs">Country of Issue</span><span className="font-medium text-[var(--text-primary)]">{formData.placeOfIssue}</span></div>
     </div>
 
     {formData.civilStatus === 'Married' && (
       <>
-        <div className="flex items-center gap-2 text-xl font-bold text-gray-800 border-b pb-2 mt-8">
-          <User size={24} className="text-pink-600"/> Spousal Information
+        <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2 mt-8">
+          <User size={24} className="text-pink-500"/> Spousal Information
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-          <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Spouse Name</span><span className="font-medium">{formData.spouseName || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">Spouse TIN</span><span className="font-medium">{formData.spouseTin || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">Employment Status</span><span className="font-medium">{formData.spouseEmpStatus}</span></div>
+          <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Spouse Name</span><span className="font-medium text-[var(--text-primary)]">{formData.spouseName || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Spouse TIN</span><span className="font-medium text-[var(--text-primary)]">{formData.spouseTin || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Employment Status</span><span className="font-medium text-[var(--text-primary)]">{formData.spouseEmpStatus}</span></div>
           {formData.spouseEmpStatus !== 'Unemployed' && (formData.employersName || formData.employersTin) && (
             <>
-              <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Employer's Name</span><span className="font-medium">{formData.employersName || 'N/A'}</span></div>
-              <div><span className="text-gray-500 block text-xs">Employer's TIN</span><span className="font-medium">{formData.employersTin || 'N/A'}</span></div>
+              <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Employer's Name</span><span className="font-medium text-[var(--text-primary)]">{formData.employersName || 'N/A'}</span></div>
+              <div><span className="text-[var(--text-secondary)] block text-xs">Employer's TIN</span><span className="font-medium text-[var(--text-primary)]">{formData.employersTin || 'N/A'}</span></div>
             </>
           )}
         </div>
       </>
     )}
 
-    <div className="flex items-center gap-2 text-xl font-bold text-gray-800 border-b pb-2 mt-8">
-      <Building size={24} className="text-yellow-600"/> Business Details
+    <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2 mt-8">
+      <Building size={24} className="text-yellow-500"/> Business Details
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm mt-4">
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Philippine Business Number</span><span className="font-medium">{formData.singleBusinessNum || 'N/A'}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Philippine Business Number</span><span className="font-medium text-[var(--text-primary)]">{formData.singleBusinessNum || 'N/A'}</span></div>
     </div>
 
     <div className="space-y-4 mt-6">
       {formData.businesses.map((business: any, index: number) => (
-        <div key={business.id} className="bg-gray-50 p-5 rounded-xl border border-gray-200 shadow-sm">
-          <h4 className="font-bold text-[#1e3a8a] mb-4 pb-2 border-b border-gray-200">Business Line {index + 1} <span className="text-gray-500 text-xs font-normal ml-2">({business.industryLevel})</span></h4>
+        <div key={business.id} className="bg-[var(--bg-light)] p-5 rounded-xl border border-[var(--border)] shadow-sm">
+          <h4 className="font-bold text-[var(--accent-blue)] mb-4 pb-2 border-b border-[var(--border)]">Business Line {index + 1} <span className="text-[var(--text-secondary)] text-xs font-normal ml-2">({business.industryLevel})</span></h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-            <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Trade/Business Name</span><span className="font-medium">{business.businessName || 'N/A'}</span></div>
-            <div><span className="text-gray-500 block text-xs">Line of Business</span><span className="font-medium">{business.businessLine || 'N/A'}</span></div>
-            <div><span className="text-gray-500 block text-xs">Regulatory Body</span><span className="font-medium">{business.regulatoryBody || 'N/A'}</span></div>
-            <div><span className="text-gray-500 block text-xs">Registration Number</span><span className="font-medium">{business.businessRegNum || 'N/A'}</span></div>
-            <div><span className="text-gray-500 block text-xs">Registration Date</span><span className="font-medium">{business.businessRegDate || 'N/A'}</span></div>
+            <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Trade/Business Name</span><span className="font-medium text-[var(--text-primary)]">{business.businessName || 'N/A'}</span></div>
+            <div><span className="text-[var(--text-secondary)] block text-xs">Line of Business</span><span className="font-medium text-[var(--text-primary)]">{business.businessLine || 'N/A'}</span></div>
+            <div><span className="text-[var(--text-secondary)] block text-xs">Regulatory Body</span><span className="font-medium text-[var(--text-primary)]">{business.regulatoryBody || 'N/A'}</span></div>
+            <div><span className="text-[var(--text-secondary)] block text-xs">Registration Number</span><span className="font-medium text-[var(--text-primary)]">{business.businessRegNum || 'N/A'}</span></div>
+            <div><span className="text-[var(--text-secondary)] block text-xs">Registration Date</span><span className="font-medium text-[var(--text-primary)]">{business.businessRegDate || 'N/A'}</span></div>
           </div>
         </div>
       ))}
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm mt-6">
-      <div className="md:col-span-2 pt-2 border-t"><span className="text-gray-500 block text-xs">Facility Type (Primary Business)</span><span className="font-medium">{formData.facilityType || 'N/A'}</span></div>
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Facility Address (Primary Business)</span><span className="font-medium">{formData.facilityAddress || 'N/A'}</span></div>
+      <div className="md:col-span-2 pt-2 border-t border-[var(--border)]"><span className="text-[var(--text-secondary)] block text-xs">Facility Type (Primary Business)</span><span className="font-medium text-[var(--text-primary)]">{formData.facilityType || 'N/A'}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Facility Address (Primary Business)</span><span className="font-medium text-[var(--text-primary)]">{formData.facilityAddress || 'N/A'}</span></div>
     </div>
 
-    <div className="flex items-center gap-2 text-xl font-bold text-gray-800 border-b pb-2 mt-8">
-      <User size={24} className="text-purple-600"/> Representative Details
+    <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2 mt-8">
+      <User size={24} className="text-purple-500"/> Representative Details
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Has Representative?</span><span className="font-medium">{formData.hasRepresentative}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Has Representative?</span><span className="font-medium text-[var(--text-primary)]">{formData.hasRepresentative}</span></div>
       {formData.hasRepresentative === 'Yes' && (
         <>
-          <div><span className="text-gray-500 block text-xs">Representative Type</span><span className="font-medium">{formData.relType}</span></div>
-          <div><span className="text-gray-500 block text-xs">Relationship Date</span><span className="font-medium">{formData.relDate || 'N/A'}</span></div>
-          <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Representative Name</span><span className="font-medium">{formData.repName || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">Address Type</span><span className="font-medium">{formData.repAddType}</span></div>
-          <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Representative Address</span><span className="font-medium">{formData.repAdd || 'N/A'}</span></div>
-          <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Representative Email</span><span className="font-medium break-all">{formData.repEmailAdd || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">Contact Types</span><span className="font-medium">{formData.repPrefContactType || 'None'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Representative Type</span><span className="font-medium text-[var(--text-primary)]">{formData.relType}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Relationship Date</span><span className="font-medium text-[var(--text-primary)]">{formData.relDate || 'N/A'}</span></div>
+          <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Representative Name</span><span className="font-medium text-[var(--text-primary)]">{formData.repName || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Address Type</span><span className="font-medium text-[var(--text-primary)]">{formData.repAddType}</span></div>
+          <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Representative Address</span><span className="font-medium text-[var(--text-primary)]">{formData.repAdd || 'N/A'}</span></div>
+          <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Representative Email</span><span className="font-medium break-all text-[var(--text-primary)]">{formData.repEmailAdd || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Contact Types</span><span className="font-medium text-[var(--text-primary)]">{formData.repPrefContactType || 'None'}</span></div>
           <div>
-            <span className="text-gray-500 block text-xs">Contact Details</span>
-            <span className="font-medium block">{formData.repLandlineDetails ? `Landline: ${formData.repLandlineDetails}` : ''}</span>
-            <span className="font-medium block">{formData.repFaxDetails ? `Fax: ${formData.repFaxDetails}` : ''}</span>
-            <span className="font-medium block">{formData.repMobileDetails ? `Mobile: ${formData.repMobileDetails}` : ''}</span>
+            <span className="text-[var(--text-secondary)] block text-xs">Contact Details</span>
+            <span className="font-medium block text-[var(--text-primary)]">{formData.repLandlineDetails ? `Landline: ${formData.repLandlineDetails}` : ''}</span>
+            <span className="font-medium block text-[var(--text-primary)]">{formData.repFaxDetails ? `Fax: ${formData.repFaxDetails}` : ''}</span>
+            <span className="font-medium block text-[var(--text-primary)]">{formData.repMobileDetails ? `Mobile: ${formData.repMobileDetails}` : ''}</span>
           </div>
         </>
       )}
     </div>
 
-    <div className="flex items-center gap-2 text-xl font-bold text-gray-800 border-b pb-2 mt-8">
-      <FileText size={24} className="text-green-600"/> Invoices Details
+    <div className="flex items-center gap-2 text-xl font-bold text-[var(--text-primary)] border-b border-[var(--border)] pb-2 mt-8">
+      <FileText size={24} className="text-green-500"/> Invoices Details
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-      <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Intend to use BIR Printed Invoices?</span><span className="font-medium">{formData.hasInvoices}</span></div>
+      <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Intend to use BIR Printed Invoices?</span><span className="font-medium text-[var(--text-primary)]">{formData.hasInvoices}</span></div>
       {formData.hasInvoices === 'Yes' && (
         <>
-          <div><span className="text-gray-500 block text-xs">Invoice Type</span><span className="font-medium">{formData.invType}</span></div>
-          <div><span className="text-gray-500 block text-xs">Manner of Invoices</span><span className="font-medium">{formData.invManner}</span></div>
-          <div className="md:col-span-2"><span className="text-gray-500 block text-xs">Description of Invoices</span><span className="font-medium">{formData.invDescription || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">No. of Boxes/Booklets</span><span className="font-medium">{formData.numOfBoxes || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">No. of Sets per Box/Booklet</span><span className="font-medium">{formData.numOfSetsPerBoxes || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">No. of Copies per Set</span><span className="font-medium">{formData.numOfCopies || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">Serial No. Start</span><span className="font-medium">{formData.serialStart || 'N/A'}</span></div>
-          <div><span className="text-gray-500 block text-xs">Serial No. End</span><span className="font-medium">{formData.serialEnd || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Invoice Type</span><span className="font-medium text-[var(--text-primary)]">{formData.invType}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Manner of Invoices</span><span className="font-medium text-[var(--text-primary)]">{formData.invManner}</span></div>
+          <div className="md:col-span-2"><span className="text-[var(--text-secondary)] block text-xs">Description of Invoices</span><span className="font-medium text-[var(--text-primary)]">{formData.invDescription || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">No. of Boxes/Booklets</span><span className="font-medium text-[var(--text-primary)]">{formData.numOfBoxes || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">No. of Sets per Box/Booklet</span><span className="font-medium text-[var(--text-primary)]">{formData.numOfSetsPerBoxes || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">No. of Copies per Set</span><span className="font-medium text-[var(--text-primary)]">{formData.numOfCopies || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Serial No. Start</span><span className="font-medium text-[var(--text-primary)]">{formData.serialStart || 'N/A'}</span></div>
+          <div><span className="text-[var(--text-secondary)] block text-xs">Serial No. End</span><span className="font-medium text-[var(--text-primary)]">{formData.serialEnd || 'N/A'}</span></div>
         </>
       )}
     </div>
@@ -363,27 +363,27 @@ export default function Form1901() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] font-sans">
-      <header className="bg-[var(--bg-card)] text-[var(--text-primary)] p-3 sm:p-4 shadow-md sticky top-0 z-50 border-b border-[var(--border)]">
-        <div className="container mx-auto max-w-5xl flex items-center gap-3">
-          {step < 8 && (
-            <Link href="/" className="hover:text-[var(--text-secondary)] transition-colors">
-              <ArrowLeft size={20} />
-            </Link>
-          )}
+      <header className="bg-[var(--bg-light)] text-[var(--text-primary)] p-4 sm:p-5 shadow-lg sticky top-0 z-50 border-b-2 border-[var(--accent-blue)]">
+        <div className="container mx-auto max-w-5xl flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="bg-[var(--accent-blue)] rounded-lg p-1 w-9 h-9 flex items-center justify-center overflow-hidden">
+            {step < 8 && (
+              <Link href="/" className="text-[var(--text-primary)] hover:text-[var(--accent-blue)] transition-colors p-1">
+                <ArrowLeft size={20} />
+              </Link>
+            )}
+            <div className="bg-[var(--accent-blue)] rounded-lg p-2 w-10 h-10 flex items-center justify-center overflow-hidden">
               <img src="/bir-logo.png" alt="BIR Logo" className="w-full h-full object-contain" />
             </div>
-            <h1 className="font-semibold text-base hidden sm:block">Form 1901 Registration</h1>
+            <h1 className="font-bold text-lg hidden sm:block text-[var(--text-primary)]">Form 1901</h1>
           </div>
           
           {step >= 8 ? (
-            <button onClick={handleLogout} className="ml-auto text-xs bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-lg font-semibold transition-colors">
+            <button onClick={handleLogout} className="text-xs bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors">
               Logout
             </button>
           ) : (
-            <div className="ml-auto text-xs bg-[var(--bg-light)] px-3 py-1 rounded-lg border border-[var(--border)]">
-              {`Step ${step} of 7`}
+            <div className="text-xs bg-[var(--accent-blue)] px-4 py-2 rounded-lg text-white font-semibold">
+              Step {step} of 7
             </div>
           )}
         </div>
